@@ -1,6 +1,6 @@
 from typing import Union
-from fastapi import FastAPI, Header, Response, status
-from fastapi.responses import FileResponse
+from fastapi import *
+from fastapi.responses import *
 from pydantic import BaseModel
 from enum import Enum
 
@@ -14,8 +14,10 @@ import app.global_var as g
 app = FastAPI()
 
 
+
+
 # インデックスページ
-@app.get("/")
+@app.get("/index")
 def indexHandler():
     return FileResponse(g.WWWROOT + "html/index/index.html")
 
@@ -38,14 +40,27 @@ class memberOnly(str, Enum):
 
 @app.get("/{directive}")
 def hello_world(directive:memberOnly):
-    if directive == memberOnly.profile:
-        result = profile.handler()
-    elif directive == memberOnly.chat:
-        result = chat.handler()
-    elif directive == memberOnly.conversation:
-        result = conversation.handler()
-    elif directive == memberOnly.history:
-        result = history.handler()
-    else:
-        # 例外
-    return result
+    return ""
+    # if directive == memberOnly.profile:
+    #     result = profile.handler()
+    # elif directive == memberOnly.chat:
+    #     result = chat.handler()
+    # elif directive == memberOnly.conversation:
+    #     result = conversation.handler()
+    # elif directive == memberOnly.history:
+    #     result = history.handler()
+    # else:
+    #     # 例外
+    # return result
+
+
+
+# バリデーションエラーハンドリング
+
+from fastapi.exceptions import RequestValidationError
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(_a, _b):
+    return FileResponse(g.WWWROOT + "html/error/404.html")
+
+
