@@ -60,7 +60,7 @@ def hello_world(directive:memberOnly):
 from fastapi.exceptions import RequestValidationError
 
 @app.exception_handler(RequestValidationError)
-async def validation_exception_handler(_a, _b):
+def validation_exception_handler(_a, _b):
     return FileResponse(g.WWWROOT + "html/error/404.html")
 
 
