@@ -39,6 +39,8 @@ header {
 #wrapper {
 	max-width: 1200px;
 	padding: 10px;
+	margin-right: auto;
+	margin-left: auto;
 	@include sb {
 		margin-top: 60px;
 	}
@@ -53,3 +55,16 @@ header {
 body {
 	background-color: rgba(100, 225, 255, 0.3);
 }
+
+html, body {
+	@include sb {
+		font-size: 14px;
+	}
+	@include tb {
+		font-size: 15px;
+	}
+	@include fb {
+		font-size: 16px;
+	}
+}
+
