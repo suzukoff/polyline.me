@@ -1,0 +1,64 @@
+* {
+  font-family: "Consolas";
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+}
+@media screen and (max-width: 500px) {
+  header {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  header {
+    height: 60px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  header {
+    height: 70px;
+  }
+}
+header #Logo {
+  height: 100%;
+}
+header h1 {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px lightgray solid;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#wrapper {
+  max-width: 1200px;
+  padding: 10px;
+}
+@media screen and (max-width: 500px) {
+  #wrapper {
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  #wrapper {
+    margin-top: 70px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  #wrapper {
+    margin-top: 80px;
+  }
+}
+
+body {
+  background-color: rgba(100, 225, 255, 0.3);
+}

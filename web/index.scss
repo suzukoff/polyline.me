@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#wrapper {
+	#featureContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		.featureBox {
+			margin-right: 10px;
+			margin-bottom: 10px;
+			border: 1px black solid;
+			border-radius: 10px;
+			max-width: 300px;
+			background-color: white;
+			.title {
+				border-bottom: 1px gray solid;
+				padding: 10px;
+			}
+			.content {
+				padding: 15px;
+			}
+		}
+	}
+	#registerContainer {
+		
+	}
+}
+

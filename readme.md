@@ -45,6 +45,32 @@ sqlite3 --version
 # -> 3.37.2
 ```
 
+## Nginxのインストール
+
+```bash
+# Nginxのインストール
+sudo apt install nginx
+
+# Nginxの起動
+sudo systemctl start nginx
+```
+
+「/etc/nginx/nginx.conf」ファイルのhttpディレクティブ内に以下の記載をします。
+
+```nginx.conf
+include </dev/nginx.confへのパス>;
+```
+
+```bash
+# Nginxの再起動
+sudo systemctl restart nginx
+```
+
+### Nginx動作までの設定
+
+1. WWWROOTディレクティブまでの全てのディレクトリの実行権限を付与
+2. 読み込み権限を対象ファイル全てに付与
+
 
 # 実行方法
 

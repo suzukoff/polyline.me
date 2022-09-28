@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@import "_.scss";
+
+* {
+	font-family: "Consolas";
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	@include sb {
+		height: 50px;
+	}
+	@include tb {
+		height: 60px;
+	}
+	@include fb {
+		height: 70px;
+	}
+	#Logo {
+		height: 100%;
+	}
+	h1 {
+		font-size: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		border-bottom: 1px lightgray solid;
+		background-color: rgba(white, 0.8);
+	}
+}
+
+#wrapper {
+	max-width: 1200px;
+	padding: 10px;
+	@include sb {
+		margin-top: 60px;
+	}
+	@include tb {
+		margin-top: 70px;
+	}
+	@include fb {
+		margin-top: 80px;
+	}
+}
+
+body {
+	background-color: rgba(100, 225, 255, 0.3);
+}

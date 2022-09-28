@@ -1,0 +1,33 @@
+
+$fb: 1000;
+$sb: 500;
+
+@mixin fb {
+	@media screen and (min-width: (#{$fb+1}px)) {
+		@content;
+	}
+}
+
+@mixin tb {
+	@media screen and (min-width: #{$sb+1}px) and (max-width: (#{$fb}px)) {
+		@content;
+	}
+}
+
+@mixin sb {
+	@media screen and (max-width: (#{$sb}px)) {
+		@content;
+	}
+}
+
+@mixin sbtb {
+	@media screen and (max-width: (#{$fb}px)) {
+		@content;
+	}
+}
+
+@mixin tbfb {
+	@media screen and (min-width: (#{$sb+1}px)) {
+		@content;
+	}
+}

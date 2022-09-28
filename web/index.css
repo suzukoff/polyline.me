@@ -1,0 +1,20 @@
+#wrapper #featureContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#wrapper #featureContainer .featureBox {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px black solid;
+  border-radius: 10px;
+  max-width: 300px;
+  background-color: white;
+}
+#wrapper #featureContainer .featureBox .title {
+  border-bottom: 1px gray solid;
+  padding: 10px;
+}
+#wrapper #featureContainer .featureBox .content {
+  padding: 15px;
+}
