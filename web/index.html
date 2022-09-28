@@ -55,21 +55,22 @@
 		</div>
 		<div id="registerContainer">
 			<div id="register-login_tab">
-				<img src="/img/Login.webp" alt="ログイン" />
-				<img src="/img/Register.webp" alt="新規登録" />
+				<img id="loginTab" src="/img/Login.webp" alt="ログイン" />
+				<img id="registerTab" src="/img/Register.webp" alt="新規登録" />
 			</div>
-			<div id="register-login_form">
-				<div id="login_form">
+			<div id="register-login_formContainer">
+				<div id="login_form" class="register-login_form">
 					<div class="title">ログインフォーム</div>
-					<div class="description">ユーザID・メールアドレス</div>
-					<input type="text" />
+					<div class="description">メールアドレス</div>
+					<input type="text" size="25" />
 					<div class="description">パスワード</div>
-					<input type="password" />
+					<input type="password" size="25" />
 					<button>ログイン</button>
 				</div>
-				<div id="register_form">
-					<div class="description">会員登録フォーム</div>
-					<input type="text" />
+				<div id="register_form" class="register-login_form">
+					<div class="title">会員登録フォーム</div>
+					<div class="description">メールアドレス</div>
+					<input type="text" size="25" />
 					<button>仮登録</button>
 				</div>
 			</div>
