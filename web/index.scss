@@ -1,28 +1,74 @@
 @charset "UTF-8";
+@import "_.scss";
 
 #wrapper {
 	#featureContainer {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		.featureBox {
-			margin-right: 10px;
-			margin-bottom: 10px;
-			border: 1px black solid;
-			border-radius: 10px;
-			max-width: 300px;
-			background-color: white;
-			.title {
-				border-bottom: 1px gray solid;
-				padding: 10px;
+		@include sbtb {
+			display: flex;
+			flex-wrap: nowrap;
+			width: 100%;
+			box-sizing: border-box;
+			max-height: 250px;
+			overflow-x: auto;
+			padding: 10px;
+			background-color: rgba(blue, 0.5);
+			.featureBox {
+				margin-right: 10px;
+				border: 1px black solid;
+				border-radius: 5px;
+				min-width: 280px;
+				background-color: white;
+				.title {
+					border-bottom: 1px gray solid;
+					padding: 10px;
+				}
+				.content {
+					padding: 15px;
+				}
 			}
-			.content {
-				padding: 15px;
+		}
+		@include fb {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			.featureBox {
+				margin-right: 10px;
+				margin-bottom: 10px;
+				border: 1px black solid;
+				border-radius: 10px;
+				max-width: 300px;
+				background-color: white;
+				.title {
+					border-bottom: 1px gray solid;
+					padding: 10px;
+				}
+				.content {
+					padding: 15px;
+				}
+				&:hover {
+					background-color: rgba(white, 0.5);
+				}
 			}
 		}
 	}
 	#registerContainer {
-		
+		margin-top: 50px;
+		#register-login_tab {
+			display: flex;
+			justify-content: center;
+			@include fb {
+				display: none;
+			}
+			img {
+				width: 50%;
+				max-width: 250px;
+				border: 1px black solid;
+				cursor: pointer;
+				&:hover {
+					background-color: rgba(white, 0.8);
+				}
+			}
+		}
 	}
 }
 

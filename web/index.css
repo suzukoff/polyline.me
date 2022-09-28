@@ -1,20 +1,72 @@
-#wrapper #featureContainer {
+@media screen and (max-width: 1000px) {
+  #wrapper #featureContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 250px;
+    overflow-x: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+  #wrapper #featureContainer .featureBox {
+    margin-right: 10px;
+    border: 1px black solid;
+    border-radius: 5px;
+    min-width: 280px;
+    background-color: white;
+  }
+  #wrapper #featureContainer .featureBox .title {
+    border-bottom: 1px gray solid;
+    padding: 10px;
+  }
+  #wrapper #featureContainer .featureBox .content {
+    padding: 15px;
+  }
+}
+@media screen and (min-width: 1001px) {
+  #wrapper #featureContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #wrapper #featureContainer .featureBox {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px black solid;
+    border-radius: 10px;
+    max-width: 300px;
+    background-color: white;
+  }
+  #wrapper #featureContainer .featureBox .title {
+    border-bottom: 1px gray solid;
+    padding: 10px;
+  }
+  #wrapper #featureContainer .featureBox .content {
+    padding: 15px;
+  }
+  #wrapper #featureContainer .featureBox:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+#wrapper #registerContainer {
+  margin-top: 50px;
+}
+#wrapper #registerContainer #register-login_tab {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
-#wrapper #featureContainer .featureBox {
-  margin-right: 10px;
-  margin-bottom: 10px;
+@media screen and (min-width: 1001px) {
+  #wrapper #registerContainer #register-login_tab {
+    display: none;
+  }
+}
+#wrapper #registerContainer #register-login_tab img {
+  width: 50%;
+  max-width: 250px;
   border: 1px black solid;
-  border-radius: 10px;
-  max-width: 300px;
-  background-color: white;
+  cursor: pointer;
 }
-#wrapper #featureContainer .featureBox .title {
-  border-bottom: 1px gray solid;
-  padding: 10px;
-}
-#wrapper #featureContainer .featureBox .content {
-  padding: 15px;
+#wrapper #registerContainer #register-login_tab img:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }

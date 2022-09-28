@@ -6,10 +6,12 @@
 	<title>polyline</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+	<script src="script.js"></script>
 </head>
 <body>
 	<header>
-		<img id="Logo" src="/img/Logo.png" alt="ロゴ" />
+		<img id="Logo" src="/img/Logo.webp" alt="ロゴ" />
 		<h1>polyline</h1>
 	</header>
 	<div id="wrapper">
@@ -20,7 +22,7 @@
 			</div>
 			<div class="featureBox">
 				<div class="title">超軽量🎵</div>
-				<div class="content">「FastAPI」&times;「SQLite」&times;「Nginx」で超軽量にサクサク動作します。</div>
+				<div class="content">「FastAPI」&times;「SQLite」&times;「Nginx」&times;「Vue.js」で超軽量にサクサク動作します。</div>
 			</div>
 			<div class="featureBox">
 				<div class="title">オープンソース♬</div>
@@ -28,7 +30,7 @@
 			</div>
 			<div class="featureBox">
 				<div class="title">高い拡張性♩</div>
-				<div class="content">「Python」「Nginx」「SQLite」で超軽量に開発しているため、自身でプログラムを改良することも容易です。</div>
+				<div class="content">「Python」「Nginx」「SQLite」「Vue.js」で超軽量に開発しているため、自身でプログラムを改良することも容易です。</div>
 			</div>
 			<div class="featureBox">
 				<div class="title">個人情報を集めません🎶</div>
@@ -46,9 +48,31 @@
 				<div class="title">ユーザを第一に🎵</div>
 				<div class="content">開発者の自己満足実装を避け、無駄な機能を排除したシンプルな設計です。</div>
 			</div>
+			<div class="featureBox">
+				<div class="title">完全無料♩</div>
+				<div class="content">全での機能を完全無料で使用できます。<br />追加課金等は一切ありません。</div>
+			</div>
 		</div>
 		<div id="registerContainer">
-			
+			<div id="register-login_tab">
+				<img src="/img/Login.webp" alt="ログイン" />
+				<img src="/img/Register.webp" alt="新規登録" />
+			</div>
+			<div id="register-login_form">
+				<div id="login_form">
+					<div class="title">ログインフォーム</div>
+					<div class="description">ユーザID・メールアドレス</div>
+					<input type="text" />
+					<div class="description">パスワード</div>
+					<input type="password" />
+					<button>ログイン</button>
+				</div>
+				<div id="register_form">
+					<div class="description">会員登録フォーム</div>
+					<input type="text" />
+					<button>仮登録</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
