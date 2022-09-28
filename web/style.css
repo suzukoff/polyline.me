@@ -44,6 +44,7 @@ header h1 {
   padding: 10px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 50px;
 }
 @media screen and (max-width: 500px) {
   #wrapper {
