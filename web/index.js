@@ -46,6 +46,8 @@
 			loginWarning.classList.add("warning");
 			return;
 		}
+		loginWarning.classList.remove("warning");
+		loginWarning.textContent = "";
 		login_mail_ok = true;
 		loginChecker();
 	});
@@ -69,6 +71,8 @@
 			loginWarning.classList.add("warning");
 			return;
 		}
+		loginWarning.classList.remove("warning");
+		loginWarning.textContent = "";
 		login_pw_ok = true;
 		loginChecker();	
 	});
