@@ -1,10 +1,12 @@
-from typing import Union
-from fastapi import *
-from fastapi.responses import *
+from fastapi import FastAPI, Cookie
 from pydantic import BaseModel
-from enum import Enum
+from typing import Union
 
-import app.index as index
+import app.pre_register as pre_register
+import app.register as register
+import app.login as login
+
+
 import app.profile as profile
 import app.chat as chat
 import app.conversation as conversation
@@ -16,9 +18,25 @@ import app.global_var as g
 # アプリケーションオブジェクトインスタンスの生成
 app = FastAPI()
 
+@app.post("/api/login")
+def LoginHandler(cookie: Union[str, None] = Cookie(default=None)):
+	return {"a", "b"}
 
-@app.get("/api/whoami")
-def apiHandler():
+
+class pre_registerStruct(BaseModel):
+	mail: str
+	pw: str
+
+@app.post("/api/pre-register")
+def PreRegisterHandler(json: pre_registerStruct, cookie: Union[str, None] = Cookie(default=None)):
+	return pre_register.handler(json, cookie)
+
+@app.post("/api/register")
+def RegisterHandler(cookie: Union[str, None] = Cookie(default=None)):
+	return {"a", "b"}
+
+@app.post("/api")
+def apiHandler(cookie: Union[str, None] = Cookie(default=None)):
 	return {"a", "b"}
 
 
