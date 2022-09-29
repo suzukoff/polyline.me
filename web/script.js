@@ -24,7 +24,7 @@ const mailRegex = `^[a-zA-Z0-9_.+-]+[a-zA-Z0-9_]@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-
 const urlRegex = `^https?://[a-zA-Z\-\.]+\.\w+$`;
 const fqdnRegex = `^[a-zA-Z\-\.]+\.\w+$`;
 const alphamericRegex = `^[a-zA-Z0-9_\-]+$`;
-const asciiRegex = `^[0x21-0x7e]+$`;
+const asciiRegex = `^[!-~]+$`;
 
 const NAMESPACE_OF_SVG = "http://www.w3.org/2000/svg";
 const SPACE = " ";
