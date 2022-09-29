@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from enum import Enum
 
 import app.index as index
-import app.web as web
 import app.profile as profile
 import app.chat as chat
 import app.conversation as conversation
@@ -19,7 +18,7 @@ app = FastAPI()
 
 
 @app.get("/api/whoami")
-def indexHandler():
+def apiHandler():
 	return {"a", "b"}
 
 
