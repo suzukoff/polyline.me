@@ -1,0 +1,7 @@
+CREATE TABLE session(
+	cookie VARCHAR(100) PRIMARY KEY,
+    mail VARCHAR(100) NULL,
+    valid BIT DEFAULT 1,
+    rgdt datetime DEFAULT CURRENT_TIMESTAMP,
+    updt datetime DEFAULT CURRENT_TIMESTAMP
+);
