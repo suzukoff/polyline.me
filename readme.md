@@ -72,6 +72,16 @@ sudo systemctl restart nginx
 2. 読み込み権限を対象ファイル全てに付与
 
 
+## 証明書の発行
+
+無料で使用できる「Let's Encrypt」を使用します。
+
+```bash
+sudo apt install certbot
+ sudo certbot certonly --standalone -d polyline.me
+```
+
+
 # 実行方法
 
 talk-withをカレントディレクトリとして状態で、以下のコマンドを実行します。
