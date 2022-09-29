@@ -67,6 +67,12 @@
 				&:hover {
 					background-color: rgba(white, 0.8);
 				}
+				@include sbtb {
+					&.selected {
+						border: 1px blue solid;
+						background-color: rgba(white, 0.8);
+					}
+				}
 			}
 		}
 		#register-login_formContainer {
@@ -75,10 +81,34 @@
 				display: flex;
 				justify-content: center;
 			}
+			#loginWarning, #registerWarning {
+				&:not(.warning) {
+					display: none;
+				}
+				&.warning {
+					padding: 0.2rem 0.5rem;
+					background-color: rgba(255, 220, 220);
+					border: 1px gray solid;
+					font-size: 0.6rem;
+					&::before {
+						content: "※";
+						margin-right: 0.5rem;
+					}
+				}
+			}
 			.register-login_form {
 				overflow: hidden;
 				border: 1px gray solid;
 				padding: 25px;
+				background-color: rgba(white, 0.3);
+				@include sbtb {
+					&:not(.selected) {
+						display: none;
+					}
+				}
+				@include fb {
+					min-width: 300px;
+				}
 				.title {
 					border-left: 5px blue solid;
 					margin-bottom: 25px;
@@ -102,12 +132,17 @@
 					align-items: center;
 					width: 8rem;
 					height: 1.8rem;
-					background-color: aliceblue;
-					cursor: pointer;
-					&:hover {
-						color: white;
-						font-weight: bold;
-						background-color: blue;
+					color: white;
+					background-color: gray;
+					&.ok {
+						color: black;
+						background-color: aliceblue;
+						cursor: pointer;
+						&:hover {
+							color: white;
+							font-weight: bold;
+							background-color: blue;
+						}
 					}
 				}
 			}

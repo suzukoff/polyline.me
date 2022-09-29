@@ -71,6 +71,12 @@
 #wrapper #registerContainer #register-login_tab img:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
+@media screen and (max-width: 1000px) {
+  #wrapper #registerContainer #register-login_tab img.selected {
+    border: 1px blue solid;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
 #wrapper #registerContainer #register-login_formContainer {
   margin-top: 10px;
 }
@@ -80,10 +86,34 @@
     justify-content: center;
   }
 }
+#wrapper #registerContainer #register-login_formContainer #loginWarning:not(.warning), #wrapper #registerContainer #register-login_formContainer #registerWarning:not(.warning) {
+  display: none;
+}
+#wrapper #registerContainer #register-login_formContainer #loginWarning.warning, #wrapper #registerContainer #register-login_formContainer #registerWarning.warning {
+  padding: 0.2rem 0.5rem;
+  background-color: rgb(255, 220, 220);
+  border: 1px gray solid;
+  font-size: 0.6rem;
+}
+#wrapper #registerContainer #register-login_formContainer #loginWarning.warning::before, #wrapper #registerContainer #register-login_formContainer #registerWarning.warning::before {
+  content: "※";
+  margin-right: 0.5rem;
+}
 #wrapper #registerContainer #register-login_formContainer .register-login_form {
   overflow: hidden;
   border: 1px gray solid;
   padding: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+@media screen and (max-width: 1000px) {
+  #wrapper #registerContainer #register-login_formContainer .register-login_form:not(.selected) {
+    display: none;
+  }
+}
+@media screen and (min-width: 1001px) {
+  #wrapper #registerContainer #register-login_formContainer .register-login_form {
+    min-width: 300px;
+  }
 }
 #wrapper #registerContainer #register-login_formContainer .register-login_form .title {
   border-left: 5px blue solid;
@@ -108,10 +138,15 @@
   align-items: center;
   width: 8rem;
   height: 1.8rem;
+  color: white;
+  background-color: gray;
+}
+#wrapper #registerContainer #register-login_formContainer .register-login_form button.ok {
+  color: black;
   background-color: aliceblue;
   cursor: pointer;
 }
-#wrapper #registerContainer #register-login_formContainer .register-login_form button:hover {
+#wrapper #registerContainer #register-login_formContainer .register-login_form button.ok:hover {
   color: white;
   font-weight: bold;
   background-color: blue;
