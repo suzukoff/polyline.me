@@ -3,21 +3,28 @@
 const sb_tb = 500;
 const tb_fb = 1000;
 
-const clientWidth = window.clientWidth;
+let clientWidth = window.innerWidth;
+let IsSb = clientWidth <= sb_tb;
+let IsTb = !IsSb && clientWidth <= tb_fb;
+let IsFb = !(IsSb || IsTb);
+let IsSbTb = IsSb || IsTb;
+let IsTbFb = IsTb || IsFb;
 
-const IsSb = clientWidth <= sb_tb;
-const IsTb = !IsSb && clientWidth <= tb_fb;
-const IsFb = !(IsSb || IsTb);
+window.addEventListener("resize", () => {
+	clientWidth = window.innerWidth;
+	IsSb = clientWidth <= sb_tb;
+	IsTb = !IsSb && clientWidth <= tb_fb;
+	IsFb = !(IsSb || IsTb);
+	IsSbTb = IsSb || IsTb;
+	IsTbFb = IsTb || IsFb;
+});
 
-const IsSbTb = IsSb || IsTb;
-const IsTbFb = IsTb || IsFb;
 
-
-
-
-const mailRegex = `^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$`;
+const mailRegex = `^[a-zA-Z0-9_.+-]+[a-zA-Z0-9_]@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$`;
 const urlRegex = `^https?://[a-zA-Z\-\.]+\.\w+$`;
 const fqdnRegex = `^[a-zA-Z\-\.]+\.\w+$`;
+const alphamericRegex = `^[a-zA-Z0-9_\-]+$`;
+const asciiRegex = `^[0x21-0x7e]+$`;
 
 const NAMESPACE_OF_SVG = "http://www.w3.org/2000/svg";
 const SPACE = " ";
@@ -78,6 +85,8 @@ const switcher = (tf, afx, bfx, arg = null) => (tf) ? afx(arg) : bfx(arg);
 
 const regex = a => b => b.match(a);
 const mailCheck = regex(mailRegex);
+const alpamericCheck = regex(alphamericRegex);
+const asciiCheck = regex(asciiRegex);
 
 const regexGrouping = (a, b) => a.match(b).groups;
 
