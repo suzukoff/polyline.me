@@ -113,3 +113,51 @@ const mixupMesh = (a, b, i = 0) =>  (i < a.length * b.length) ? [[a[Math.floor(i
 
 const removeClassifiedItems = a => looper(Array.from(document.getElementsByClassName(a)), b => b.classList.remove(a));
 
+
+
+// AJAX
+
+const HttpClient = {
+	Get: async function(url, data = null) {
+		const options = {
+			method: "GET",
+			mode: "cors",
+			cache: "no-cache",
+			credentials: "same-origin",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			redirect: "follow",
+		};
+		try {
+			return await (await fetch(url + (data !== null ? "?" : "") + URLencodeAssoc(data || {}), options)).json();
+		} catch (ex) {
+			return {
+				successed: false,
+			};
+		}
+	},
+	Post: async function(url, data = null) {
+		const options = {
+			method: "POST",
+			mode: "cors",
+			cache: "no-cache",
+			credentials: "same-origin",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			redirect: "follow",
+			body: JSON.stringify(data),
+		};
+		try {
+			return await (await fetch(url, options)).json();
+		} catch (ex) {
+			return {
+				successed: false,
+			};
+		}
+	},
+};
+
+
+
