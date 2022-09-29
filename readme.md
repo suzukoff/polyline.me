@@ -81,6 +81,18 @@ sudo apt install certbot
  sudo certbot certonly --standalone -d polyline.me
 ```
 
+更新は以下の手順で♪
+
+```bash
+# 80番ポートを解放
+lsof -i -P
+kill -9 プロセス
+
+sudo certbot renew
+
+sudo systemctl restart nginx
+```
+
 
 # 実行方法
 
