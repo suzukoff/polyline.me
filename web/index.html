@@ -52,6 +52,10 @@
 				<div class="title">完全無料♩</div>
 				<div class="content">全での機能を完全無料で使用できます。<br />追加課金等は一切ありません。</div>
 			</div>
+			<div class="featureBox">
+				<div class="title">Apache License v2.0</div>
+				<div class="content">プログラムの利用(商用利用を含む)、改変・複製、再配布全てOK!です。<br />但し、当プログラムに起因して発生した損害については責任は負いません。</div>
+			</div>
 		</div>
 		<div id="registerContainer">
 			<div id="register-login_tab">
@@ -61,20 +65,26 @@
 			<div id="register-login_formContainer">
 				<div id="login_form" class="register-login_form">
 					<div class="title">ログインフォーム</div>
+					<p id="loginWarning"></p>
 					<div class="description">メールアドレス</div>
-					<input type="text" size="25" />
+					<input id="login_mail" type="text" size="25" />
 					<div class="description">パスワード</div>
-					<input type="password" size="25" />
-					<button>ログイン</button>
+					<input id="login_pw" type="password" size="25" />
+					<button id="loginButton">ログイン</button>
 				</div>
 				<div id="register_form" class="register-login_form">
 					<div class="title">会員登録フォーム</div>
+					<p id="registerWarning"></p>
 					<div class="description">メールアドレス</div>
-					<input type="text" size="25" />
-					<button>仮登録</button>
+					<input id="register_mail" type="text" size="25" />
+					<button id="registerButton">仮登録</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div id="fixed">
+		
+	</div>
+	<script src="index.js"></script>
 </body>
 </html>
