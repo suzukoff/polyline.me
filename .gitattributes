@@ -1,0 +1,24 @@
+*           text=auto eol=lf
+
+*.txt       text
+*.md        text
+*.bash      text
+*.py        text
+*.sql       text
+*.conf      text
+
+*.html      text
+*.css       text
+*.scss      text
+*.js        text
+
+
+*.jpg       -text
+*.jpeg      -text
+*.png       -text
+*.gif       -text
+*.webp      -text
+
+*.db        -text
+*.dbt       -text
+
