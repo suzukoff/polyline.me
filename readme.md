@@ -1,4 +1,4 @@
-# talk-with
+# polyline.me
 
 「Python」×「FastAPI」×「SQLite」で構成された超軽量なオープンソースのチャットアプリ。
 
@@ -20,7 +20,7 @@
 以下の環境変数を登録します。
 
 ```env
-WWWROOT = "★talk-with/webディレクトリまでのパス(最後に「/」を付けて下さい。)★"
+WWWROOT = "★「polyline.me/web/」ディレクトリまでのパス(最後に「/」を付けて下さい。)★"
 ```
 
 ## Pythonパッケージのインストール
@@ -58,7 +58,7 @@ sudo systemctl start nginx
 「/etc/nginx/nginx.conf」ファイルのhttpディレクティブ内に以下の記載をします。
 
 ```nginx.conf
-include </dev/nginx.confへのパス>;
+include <polyline.me/nginx.confへのパス>;
 ```
 
 ```bash
